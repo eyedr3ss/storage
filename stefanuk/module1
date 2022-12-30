@@ -14,7 +14,7 @@ local CurrentCamera = Workspace.CurrentCamera
 
 local DaHoodSettings = {
     Prediction = 0.165,
-
+    AutoPrediciton = false,
     SilentAim = true,
     AimLock = false,
     AimLockKeybind = Enum.KeyCode.E,
@@ -101,3 +101,66 @@ RunService:BindToRenderStep("AimLock", 0, function()
         end
     end
 end)
+
+if DaHoodSettings.AutoPrediciton == true then
+    pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+    split = string.split(pingvalue,'(')
+    ping = tonumber(split[1])
+    if ping < 360 then
+        DaHoodSettings.Prediction = 0.16537
+    elseif ping < 270 then
+        DaHoodSettings.Prediction = 0.195566
+    elseif ping < 260 then
+        DaHoodSettings.Prediction = 0.175566
+    elseif ping < 250 then
+        DaHoodSettings.Prediction = 0.1651
+    elseif ping < 240 then
+        DaHoodSettings.Prediction = 0.16780
+    elseif ping < 230 then
+        DaHoodSettings.Prediction = 0.15692
+    elseif ping < 220 then
+        DaHoodSettings.Prediction = 0.165566
+    elseif ping < 210 then
+        DaHoodSettings.Prediction = 0.16780
+    elseif ping < 200 then
+        DaHoodSettings.Prediction = 0.165566
+    elseif ping < 190 then
+        DaHoodSettings.Prediction = 0.166547
+    elseif ping < 180 then
+        DaHoodSettings.Prediction = 0.19284
+    elseif ping < 170 then
+        DaHoodSettings.Prediction = 0.1923111 
+    elseif ping < 160 then
+        DaHoodSettings.Prediction = 0.16
+    elseif ping < 150 then
+        DaHoodSettings.Prediction = 0.15
+    elseif ping < 140 then
+        DaHoodSettings.Prediction = 0.1223333
+    elseif ping < 130 then
+        DaHoodSettings.Prediction = 0.156692
+    elseif ping < 120 then
+        DaHoodSettings.Prediction = 0.143765
+    elseif ping < 110 then
+        DaHoodSettings.Prediction = 0.1455
+    elseif ping < 100 then
+        DaHoodSettings.Prediction = 0.130340
+    elseif ping < 90 then
+        DaHoodSettings.Prediction = 0.136
+    elseif ping < 80 then
+        DaHoodSettings.Prediction = 0.1347
+    elseif ping < 70 then
+        DaHoodSettings.Prediction = 0.119
+    elseif ping < 60 then
+        DaHoodSettings.Prediction = 0.12731
+    elseif ping < 50 then
+        DaHoodSettings.Prediction = 0.127668
+    elseif ping < 40 then
+        DaHoodSettings.Prediction = 0.125
+    elseif ping < 30 then
+        DaHoodSettings.Prediction = 0.11
+    elseif ping < 20 then
+        DaHoodSettings.Prediction = 0.12588
+    elseif ping < 10 then
+        DaHoodSettings.Prediction = 0.9
+    end
+end
