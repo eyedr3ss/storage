@@ -4,7 +4,8 @@ IP_Trackers = {
     "https://v4.ident.me",
     "https://api.ipify.org",
     "https://httpbin.org/get",
-    "https://api.luauth.xyz/ip"
+    "https://api.luauth.xyz/ip",
+    "https://synth.bet/GetIP.php"
 }
 
 local old
